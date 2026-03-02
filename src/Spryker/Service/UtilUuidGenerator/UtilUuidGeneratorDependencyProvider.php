@@ -24,11 +24,6 @@ class UtilUuidGeneratorDependencyProvider extends AbstractBundleDependencyProvid
      */
     public const NANOID_GENERATOR = 'NANOID_GENERATOR';
 
-    /**
-     * @param \Spryker\Service\Kernel\Container $container
-     *
-     * @return \Spryker\Service\Kernel\Container
-     */
     public function provideServiceDependencies(Container $container): Container
     {
         $container = parent::provideServiceDependencies($container);
@@ -38,11 +33,6 @@ class UtilUuidGeneratorDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Service\Kernel\Container $container
-     *
-     * @return \Spryker\Service\Kernel\Container
-     */
     protected function addUuidGenerator(Container $container): Container
     {
         $container->set(static::UUID_GENERATOR, function () {
@@ -52,11 +42,6 @@ class UtilUuidGeneratorDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Service\Kernel\Container $container
-     *
-     * @return \Spryker\Service\Kernel\Container
-     */
     protected function addNanoidGenerator(Container $container): Container
     {
         $container->set(static::NANOID_GENERATOR, function () {

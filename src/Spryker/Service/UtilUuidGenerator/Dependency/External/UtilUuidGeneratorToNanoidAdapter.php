@@ -12,11 +12,6 @@ use Hidehalo\Nanoid\Client;
 
 class UtilUuidGeneratorToNanoidAdapter implements UtilUuidGeneratorToNanoidInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\IdGeneratorSettingsTransfer $idGeneratorSettingsTransfer
-     *
-     * @return string
-     */
     public function generateUniqueRandomId(IdGeneratorSettingsTransfer $idGeneratorSettingsTransfer): string
     {
         $uniqueRandomId = (new Client())->formattedId(

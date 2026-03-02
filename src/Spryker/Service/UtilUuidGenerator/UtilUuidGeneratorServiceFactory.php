@@ -13,17 +13,11 @@ use Spryker\Service\UtilUuidGenerator\Dependency\External\UtilUuidGeneratorToUui
 
 class UtilUuidGeneratorServiceFactory extends AbstractServiceFactory
 {
-    /**
-     * @return \Spryker\Service\UtilUuidGenerator\Dependency\External\UtilUuidGeneratorToUuidGeneratorInterface
-     */
     public function getUuidGenerator(): UtilUuidGeneratorToUuidGeneratorInterface
     {
         return $this->getProvidedDependency(UtilUuidGeneratorDependencyProvider::UUID_GENERATOR);
     }
 
-    /**
-     * @return \Spryker\Service\UtilUuidGenerator\Dependency\External\UtilUuidGeneratorToNanoidInterface
-     */
     public function getNanoidGenerator(): UtilUuidGeneratorToNanoidInterface
     {
         return $this->getProvidedDependency(UtilUuidGeneratorDependencyProvider::NANOID_GENERATOR);

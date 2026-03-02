@@ -9,10 +9,5 @@ namespace Spryker\Service\UtilUuidGenerator\Dependency\External;
 
 interface UtilUuidGeneratorToUuidGeneratorInterface
 {
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
     public function generateUuid5FromObjectId(string $name): string;
 }

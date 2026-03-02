@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\IdGeneratorSettingsTransfer;
 
 interface UtilUuidGeneratorToNanoidInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\IdGeneratorSettingsTransfer $idGeneratorSettingsTransfer
-     *
-     * @return string
-     */
     public function generateUniqueRandomId(IdGeneratorSettingsTransfer $idGeneratorSettingsTransfer): string;
 }

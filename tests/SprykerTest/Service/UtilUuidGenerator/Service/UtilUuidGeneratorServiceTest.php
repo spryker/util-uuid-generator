@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Service\UtilUuidGenerator;
+namespace SprykerTest\Service\UtilUuidGenerator\Service;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\IdGeneratorSettingsTransfer;
@@ -18,6 +18,7 @@ use Spryker\Service\UtilUuidGenerator\UtilUuidGeneratorServiceInterface;
  * @group SprykerTest
  * @group Service
  * @group UtilUuidGenerator
+ * @group Service
  * @group UtilUuidGeneratorServiceTest
  * Add your own group annotations below this line
  */
@@ -38,9 +39,6 @@ class UtilUuidGeneratorServiceTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGenerateUuid5ShouldReturnCorrectUuid(): void
     {
         $service = $this->getUtilUuidGeneratorService();
@@ -50,9 +48,6 @@ class UtilUuidGeneratorServiceTest extends Unit
         $this->tester->assertSame(static::TEST_VALUE_DECODED, $generatedValue);
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateUuid5ShouldReturnSameUuidForSameResourceName(): void
     {
         $service = $this->getUtilUuidGeneratorService();
@@ -63,9 +58,6 @@ class UtilUuidGeneratorServiceTest extends Unit
         $this->tester->assertSame($firstGeneratedValue, $secondGeneratedValue);
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateUniqueRandomIdUnique(): void
     {
         // Arrange
@@ -84,9 +76,6 @@ class UtilUuidGeneratorServiceTest extends Unit
         $this->tester->assertSame(count($generatedValues), count(array_unique($generatedValues)));
     }
 
-    /**
-     * @return void
-     */
     public function testGenerateUniqueRandomIdSplit(): void
     {
         // Arrange
@@ -104,9 +93,6 @@ class UtilUuidGeneratorServiceTest extends Unit
         $this->tester->assertRegExp('/^[0-9]{5}-[0-9]{5}-[0-9]{5}$/', $uniqueRandomId);
     }
 
-    /**
-     * @return \Spryker\Service\UtilUuidGenerator\UtilUuidGeneratorServiceInterface
-     */
     protected function getUtilUuidGeneratorService(): UtilUuidGeneratorServiceInterface
     {
         return new UtilUuidGeneratorService();
